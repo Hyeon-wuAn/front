@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <h2>기본정보</h2>
+    <span><label>개인회원 <input type="radio" name="a" checked/></label></span>
+    <span><label for="business">사업자회원 <input type="radio" id="business" name="a"/></label></span>
+    <span><label>외국인회원 <input type="radio" name="a"/></div></label></span>
+    <form action="join.html" method="post"></form>
+    <div>아이디 <input type="text" name="id" placeholder="(영문소문자/숫자,4~18자)" /></div>
+    <div>비밀번호 <input type="password" name="password" placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)" /></div>
+    <div>비밀번호확인 <input type="text" name="password check" /></div>
+    <div>이름 <input type="text" name="name" /></div>
+    <div>
+      주소 <input type="text" name="address" /> <button>우편번호</button><br />
+      <input type="text" name="address1" placeholder="기본주소" /><br />
+      <input type="text" name="address2" />
+    </div>
+    <div>
+      휴대전화
+      <select name="" id="">
+        <option value="010" checked>010</option>
+        <!-- value는 값으로 넘어가는것 -->
+        <option value="011">011</option>
+        <option value="016">016</option>
+        <option value="017">017</option>
+        <option value="018">018</option>
+      </select>
+      - <input type="text" name="number" /> -
+      <input type="text" name="number" />
+      <button>간편인증</button>
+    </div>
+    <div>이메일 <input type="email" name="email" /></div>
+    <br>
+    <p style="font-size: 20px;"><strong>추가정보</strong></p>
+    <div><span><label >남자 <input type="radio" name="gender"></label></span> <label>여자 <input type="radio" name="gender"></label></div>
+  </body>
+</html>
