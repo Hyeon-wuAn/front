@@ -3,9 +3,24 @@ body {
   color: #111;
   font-family: "Raleway", "Noto Sans KR", "MYYeongnamnu", "KCCChassam";
   font-weight: 400;
+  min-height: 2000px;
   /* 한글폰트에는 영어가 포함되어있지만 영어폰트에는 한글이 포함되어있지 않아서 영어폰트를 먼저 써줘야 한다 */
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto 0 auto;
+  /* top 0 right auto bottom 0 left auto 라는 의미 */
+  /* margin: 0 auto 라고 써도 같은뜻 */
+  /* margin auto 는 좌우(상하 없음) */
+  outline: 1px solid #f00;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
 }
