@@ -17,7 +17,7 @@ a {
   /* top 0 right auto bottom 0 left auto 라는 의미 */
   /* margin: 0 auto 라고 써도 같은뜻 */
   /* margin auto 는 좌우(상하 없음) */
-  outline: 1px solid #f00;
+  /* outline: 1px solid #f00; */
 }
 h2 {
   font-size: 36px;

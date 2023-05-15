@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 3000px;
+        /* min-height는 최소높이. 기본 설정값은 0이다. */
+      }
+      .parent {
+        width: 1200px;
+        height: 800px;
+        border: 1px solid #f00;
+        margin-top: 300px;
+        margin-left: 300px;
+        position: relative;
+        /* static 이 디폴트. 아무것도 없이 position만 있으면 static이다.*/
+        /* opacity: 0.5; */
+      }
+      .son {
+        width: 400px;
+        height: 300px;
+        border: 1px solid #000;
+      }
+      .inner-son {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      .red {
+        background-color: #f00;
+        position: absolute;
+        z-index: 1;
+        top: 80px;
+        left: 80px;
+
+        /* 중요 */
+        /* position의 속성이 absolute일 때 해당 요소는 배치 기준을 자신이 아닌 상위 요소에서 찾습니다.
+        DOM 트리를 따라 올라가다가 position 속성이 static 이 아닌 첫번째 상위요소가 해당요소의 배치기준으로 설정되느데요. 만약 해당 요소 상위에 position 속성이 static 이 아닌 요소가 없다면, DOM 트리 최상위인 <body> 요소가 배치 기준이 된다. */
+
+        /* 포지션 앱솔루트 일때 부모가 포지션을 가지고있는 유무에 따라 옮겨지는 위치가 달라진다. */
+        /* 부모 포지션이 있으면 부모 좌표의 기준으로 옮겨진다. */
+        /* absolute포지션이 되면 밑에(다음에) 있는 애가 자리를 채운다.(위에 있는 애가 채우지는 않는다.) */
+      }
+      .blue {
+        background-color: #00f;
+        height: 400px;
+        position: relative;
+        z-index: 2;
+        top: 100px;
+        left: 100px;
+        /* (z-index없이 둘 다 position 일때 밑에 있는 태그가 위를 덮음 */
+        /* relative는 현재 자기 위치 기준으로 top, left 등에 따라 움직인다. */
+        opacity: 1;
+      }
+      .blue:hover {
+        opacity: 0.5;
+      }
+      .green {
+        background-color: #0f0;
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        /* 부모의 z-index 를 물려받는다 */
+        /* z-index가 더 커도 부모단위끼리만 따지게 되어서 위로 올라오지 않는다. */
+        /* red(부모)가 아예 z-index를 가지고 있지 않으면 green 이 올라온다. */
+        /* sticky 는 scoll 기준으로 움직인다. 이때 부모는 반드시 높이를 가져야 한다.
+        그리고 부모요소에 overflow 요소가 들어가 있으면 안된다. */
+        /* sticky 는 부모자식관계에서 스크롤 안에서는 fixed 되었다가 부모가 스크롤 밖에서 나가면 relative로 같이 사라진다 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="son red">
+        <div class="inner-son green"></div>
+      </div>
+      <div class="son blue"></div>
+    </div>
+  </body>
+</html>

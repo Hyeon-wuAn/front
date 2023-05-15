@@ -1,0 +1,4 @@
+*.min.css
+# min.css로 끝나는 모든 파일은 prettier 가 무시해라
+# css/ 는 css폴더 안에있는거 다 무시해라 
+# hwenc/**  는 hwenc안에 있는 모든 폴더 다 무시해라 

@@ -1,19 +1,13 @@
-/* position / flex */
-/* 부모자식관계일때만 desplay flex 쓸 수 있음 */
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   z-index: 99;
-
-  /* 위에 설정한 height 100px 바깥에 있는 것들 사라짐. */
-  /* left: 100px;
-  top: 300px; */
   transition: all 0.5s ease;
 }
-.header::after {
+.header:after {
   content: "";
   display: block;
   width: 100%;
@@ -22,53 +16,27 @@
   position: absolute;
   top: 100px;
 }
-
 .header:hover {
   height: 350px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(255, 255, 255);
 }
 .header:hover .list {
   color: #111;
+}
+.header:hover .logo a .black {
+  opacity: 1;
+}
+.header:hover .logo a .white {
+  opacity: 0;
 }
 .header .logo {
   position: absolute;
   height: 100px;
   display: flex;
   align-items: center;
-  /* 세로 중앙으로 갈때 align */
-  /* outline: 1px solid #f00; */
   padding-left: 50px;
   padding-right: 50px;
 }
-
-.list {
-  display: flex;
-  /* 옆으로 나란히 */
-  justify-content: center;
-  /* (flex)start/center/end/space-around/space-evenly/space-between */
-  /* 어디에 정렬할 것인가 main axis(가로축)에 대한 결정을 함 / 세로축은 corss axix */
-  color: #fff;
-}
-.list a.depth01 {
-  font-size: 20px;
-  font-weight: 500;
-  /* display: block;
-  height: 100px;
-  line-height: 100px; */
-  /* 높이만큼의 line-eight를 주면 중앙에 배열된다..(한줄일때 사용) */
-  height: 100px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  /* padding은 안쪽의 좌/우 여백을 만든다 */
-  /* margin으로도 사용가능. 링크 영역이 바뀜 */
-  /* outline: 1px solid #f00; */
-  transition: all 0.25s ease;
-}
-
 .header .logo a .white {
   position: absolute;
   transition: all 0.25s ease;
@@ -77,17 +45,46 @@
   opacity: 0;
   transition: all 0.25s ease;
 }
-.header:hover .logo a .black {
-  opacity: 1;
-}
-.header:hover .logo a .white {
-  opacity: 0;
-}
 
-.list > li:hover .depth01 {
+.list {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.list a.depth01 {
+  font-size: 20px;
+  font-weight: 500;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+.list > li .depth01 {
+  position: relative;
+}
+.list > li .depth01:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #f60;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transform: scaleX(0);
+  transition: all 0.25s ease;
+  z-index: 1;
+}
+.list > li .depth01:hover .depth01 {
   color: #f60;
 }
-
+.list > li .depth01:hover .depth01:after {
+  transform: scaleX(1);
+}
 .list .depth02 {
   text-align: center;
   padding-top: 10px;
@@ -96,10 +93,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 50px; */
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: all 0.25s cubic-bezier(0, 0, 0.97, 0.17);
 }
 .list .depth02 li a:hover {
   color: #f60;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  left: 100px;
+  top: 100px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup .content {
+  width: 400px;
+  height: 400px;
+  background-color: aqua;
+  margin-bottom: 10px;
 }
