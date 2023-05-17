@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현금변환계산</title>
+  </head>
+  <body>
+    <div class="money">
+      <label><span>금액</span><input type="text" class="money" id="money" placeholder="금액을 입력해주세요." /></label>
+      <button class="btn-calc">계산하기</button>
+      <button class="btn-reset">초기화</button>
+      <div class="result"></div>
+    </div>
+    <script>
+      const money = document.querySelector("#money");
+      const btnCalc = document.querySelector(".btn-calc");
+
+      btnCalc.addEventListener("click", function () {
+        let moneyValue = money.value;
+        const m50000 = Math.floor(moneyValue / 50000);
+        moneyValue = moneyValue % 50000;
+        const m10000 = Math.floor(moneyValue / 10000);
+        moneyValue = moneyValue % 10000;
+        const m5000 = Math.floor(moneyValue / 5000);
+        moneyValue = moneyValue % 5000;
+        const m1000 = Math.floor(moneyValue / 1000);
+        moneyValue = moneyValue % 1000;
+        const m500 = Math.floor(moneyValue / 500);
+        moneyValue = moneyValue % 500;
+        const m100 = Math.floor(moneyValue / 100);
+        moneyValue = moneyValue % 100;
+        const m50 = Math.floor(moneyValue / 50);
+        moneyValue = moneyValue % 50;
+        const m10 = Math.floor(moneyValue / 10);
+        result.textContent = `오만원 ${m50000}장, 만원 ${m10000}장, 오천원 ${m5000}장, 1000원 ${m1000}장, 500원 ${m500}개, 100원 ${m100}개, 오십원 ${m50}개, 10원${m10}개`;
+      });
+      const btnReset = document.querySelector(".btn-reset");
+      const result = document.querySelector(".result");
+      btnReset.addEventListener("click", function () {
+        money.value = "";
+        result.textContent = "초기화되었습니다.";
+      });
+    </script>
+  </body>
+</html>
