@@ -1,17 +1,12 @@
 @charset "UTF-8";
-/* position / flex */
-/* 부모자식관계일때만 desplay flex 쓸 수 있음 */
+/*  이거는 주석입니다. */
 .header {
   position: fixed;
-  /* fixed는 무조건 body 기준 */
   width: 100%;
   height: 100px;
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   z-index: 99;
-  /* 위에 설정한 height 100px 바깥에 있는 것들 사라짐. */
-  /* left: 100px; 
- top: 300px; */
   transition: all 0.5s ease;
 }
 .header:after {
@@ -22,90 +17,58 @@
   background-color: #ccc;
   position: absolute;
   top: 100px;
-  /* z-index: -1; */
 }
-.header:hover {
+.header.on {
   height: 350px;
   background-color: rgb(255, 255, 255);
-  /* pseudo element 가상 요소 before, after 로 만들 수 있음. */
-  .header: hover;
 }
-.header:hover .list {
+.header.on .list {
   color: #111;
 }
-.header:hover .logo a .black {
+.header.on .logo a .black {
   opacity: 1;
 }
-.header:hover .logo a .white {
+.header.on .logo a .white {
   opacity: 0;
 }
-.header:hover .logo {
+.header .logo {
   position: absolute;
   height: 100px;
   display: flex;
   align-items: center;
-  /* 세로 중앙으로 갈때 align */
-  /* outline: 1px solid #f00; */
   padding-left: 50px;
   padding-right: 50px;
 }
-.header:hover .logo a .white {
+.header .logo a .white {
   position: absolute;
   transition: all 0.25s ease;
 }
-.header:hover .logo a .black {
+.header .logo a .black {
   opacity: 0;
   transition: all 0.25s ease;
 }
-.header .header:hover .logo a .white {
-  opacity: 0;
-}
-.header .header .list {
-  display: flex;
-  /* 옆으로 나란히 */
-  justify-content: center;
-  /* (flex)start/center/end/space-around/space-evenly/space-between */
-  /* 어디에 정렬할 것인가 main axis(가로축)에 대한 결정을 함 / 세로축은 corss axix */
-  color: #fff;
-}
-.list {
+
+.gnb .list {
   display: flex;
   justify-content: center;
   color: #fff;
-  /* start/center/end/ space-around / space-evenly */
 }
-.header .list a.depth01 {
+.gnb .list > li .depth01 {
+  position: relative;
   font-size: 20px;
   font-weight: 500;
-  /* display: block; 
- height: 100px; 
- line-height: 100px; */
-  /* 높이만큼의 line-eight를 주면 중앙에 배열된다..(한줄일때 사용) */
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
-  border-bottom: 2px solid transparent;
-  /* transparent 투명, (영역은 있음) */
-  /* padding은 안쪽의 좌/우 여백을 만든다 */
-  /* margin으로도 사용가능. 링크 영역이 바뀜 */
-  /* outline: 1px solid #f00; */
   transition: all 0.25s ease;
 }
-
-.list > li .depth01 {
-  position: relative;
-}
-
-.list > li .depth01::after {
+.gnb .list > li .depth01:after {
   content: "";
   display: block;
   width: 100%;
-  /* %에 대한 기준이 있어야함 */
-  /* 위의 경우 relative로 */
-  /* position(absoulute, relative같은)을 가지고 있는 부모를 찾아올라감. */
   height: 3px;
   background-color: #f60;
   position: absolute;
@@ -114,34 +77,27 @@
   transform: scaleX(0);
   transition: all 0.25s ease;
   z-index: 1;
-  /* 자신이 position을 가지고 있어야 z-index 사용가능하다 */
 }
-
-.list > li:hover .depth01 {
+.gnb .list > li:hover .depth01 {
   color: #f60;
-  /* border-bottom: 2px solid #f60; */
 }
-
-.list > li:hover .depth01::after {
+.gnb .list > li:hover .depth01:after {
   transform: scaleX(1);
 }
-
-.list .depth02 {
+.gnb .list > li .depth02 {
   text-align: center;
   padding-top: 10px;
+  text-align: left;
 }
-
-.list .depth02 li a {
+.gnb .list > li .depth02 li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 50px; */
   padding-top: 10px;
   padding-bottom: 10px;
-  transition: all 0.25s cubic-bezier(0, 0, 0.97, 0.17);
+  transition: all 0.25s ease;
 }
-
-.list .depth02 li a:hover {
+.gnb .list > li .depth02 li a:hover {
   color: #f60;
 }
 
@@ -154,25 +110,10 @@
   left: 100px;
   top: 100px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  /* x축 10px y축 10px 만큼 떨어뜨리겠다 */
 }
-
 .popup .content {
   width: 400px;
   height: 400px;
-  background-color: aqua;
+  background-color: #12c9f2;
   margin-bottom: 10px;
 }
-
-/* sass / scss */
-/* .list { 
- display:flex 
- li { 
- .depth01 { 
- font-size: 20px; 
- font-weight:500; 
- } 
- .depth02 { 
- } 
- } 
- } */

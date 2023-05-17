@@ -1,6 +1,8 @@
-$main-color: #f60;
 @import "vars";
-// 가지고 들어올땐 언더바를 생략한다
+
+/*  이거는 주석입니다. */
+// 이거는 compile되지 않습니다.
+// _vars.scss 를 @import 로 가지고 올 때 _(언더바) 는 생략된다.
 
 .header {
   position: fixed;
@@ -41,69 +43,71 @@ $main-color: #f60;
     align-items: center;
     padding-left: 50px;
     padding-right: 50px;
-    a .white {
-      position: absolute;
-      transition: all 0.25s ease;
-    }
-    a .black {
-      opacity: 0;
-      transition: all 0.25s ease;
+    a {
+      .white {
+        position: absolute;
+        transition: all 0.25s ease;
+      }
+      .black {
+        opacity: 0;
+        transition: all 0.25s ease;
+      }
     }
   }
 }
 
-.list {
-  display: flex;
-  justify-content: center;
-  color: #fff;
-  > li {
-    .depth01 {
-      font-size: 20px;
-      font-weight: 500;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 50px;
-      padding-right: 50px;
-      border-bottom: 2px solid transparent;
-      transition: all 0.25s ease;
-    }
-    > li .depth01 {
-      position: relative;
-      &:after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: $main-color;
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        transform: scaleX(0);
+.gnb {
+  .list {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    > li {
+      .depth01 {
+        position: relative;
+        font-size: 20px;
+        font-weight: 500;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
         transition: all 0.25s ease;
-        z-index: 1;
+        &:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 3px;
+          background-color: $main-color;
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          transform: scaleX(0);
+          transition: all 0.25s ease;
+          z-index: 1;
+        }
       }
-    }
-    &:hover .depth01 {
-      color: $main-color;
-      &:after {
-        transform: scaleX(1);
-      }
-    }
-  }
-  .depth02 {
-    text-align: center;
-    padding-top: 10px;
-    li a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      transition: all 0.25s cubic-bezier(0, 0, 0.97, 0.17);
-      &:hover {
+      &:hover .depth01 {
         color: $main-color;
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+      .depth02 {
+        text-align: center;
+        padding-top: 10px;
+        text-align: left;
+        li a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          transition: all 0.25s ease;
+          &:hover {
+            color: $main-color;
+          }
+        }
       }
     }
   }
@@ -118,10 +122,10 @@ $main-color: #f60;
   left: 100px;
   top: 100px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-}
-.popup .content {
-  width: 400px;
-  height: 400px;
-  background-color: aqua;
-  margin-bottom: 10px;
+  .content {
+    width: 400px;
+    height: 400px;
+    background-color: #12c9f2;
+    margin-bottom: 10px;
+  }
 }
