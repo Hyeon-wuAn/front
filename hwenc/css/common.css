@@ -16,6 +16,7 @@ a {
 .container {
   width: 1200px;
   margin: 0 auto 0 auto;
+  position: relative;
   /* top 0 right auto bottom 0 left auto 라는 의미 */
   /* margin: 0 auto 라고 써도 같은뜻 */
   /* margin auto 는 좌우(상하 없음) */
@@ -38,4 +39,8 @@ p {
 
 .point-color {
   color: #f60;
+}
+
+.section {
+  padding: 100px 0;
 }
