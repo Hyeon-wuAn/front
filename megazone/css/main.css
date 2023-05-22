@@ -1,0 +1,48 @@
+.main-visual iframe {
+  width: 100%;
+  aspect-ratio: 1/0.5625;
+  vertical-align: top;
+}
+.main-visual .txt {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 400px;
+}
+.main-visual .txt h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.tech {
+  padding: 200px 0;
+}
+.tech h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 70px;
+  padding-left: 140px;
+  margin-bottom: 30px;
+}
+.tech h3 {
+  font-size: 24px;
+  padding: 0 0 100px 140px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.tech .main-text {
+  font-size: 20px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: #111;
+  padding: 10px 20px;
+  color: #fff;
+}
+.tech p {
+  font-size: 24px;
+  padding-left: 140px;
+  line-height: 40px;
+  margin-top: 20px;
+}

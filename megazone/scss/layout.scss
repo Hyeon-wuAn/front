@@ -1,0 +1,35 @@
+@import "vars";
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  color: #fff;
+  .logo a {
+    position: absolute;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    img {
+      width: 50%;
+    }
+  }
+  .list {
+    display: flex;
+    position: absolute;
+    right: 150px;
+    color: #fff;
+    padding: 30px;
+    .depth01 {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      //   background-color: #111;
+      font-size: $h4;
+      font-weight: 600;
+      padding: 0 30px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "vars";
+
+.main-visual {
+  iframe {
+    width: 100%;
+    aspect-ratio: 1 / 0.5625;
+    // height: 100vh;
+    // object-fit: cover; // img, video 에 쓸 수 있음.
+    vertical-align: top;
+  }
+  .txt {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    // transform: translateY(-50%);
+    left: 400px;
+    h2 {
+      font-size: $h1;
+      font-weight: 600;
+      line-height: 60px;
+    }
+  }
+}
+
+.tech {
+  padding: 200px 0;
+  h2 {
+    font-size: $h1;
+    font-weight: 700;
+    line-height: 70px;
+    padding-left: 140px;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: $h3;
+    padding: 0 0 100px 140px;
+    line-height: 40px;
+    margin-top: 20px;
+  }
+  .main-text {
+    font-size: $h4;
+    // background-color: black;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 5px;
+    background-color: #111;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  p {
+    font-size: $h3;
+    padding-left: 140px;
+    line-height: 40px;
+    margin-top: 20px;
+    // background-color: aqua;
+  }
+}
