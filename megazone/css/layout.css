@@ -1,33 +1,46 @@
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  color: #fff;
   width: 100%;
   z-index: 99;
-  color: #fff;
+  transition: all 0.25s ease;
 }
-.header .logo a {
+.header .logo {
+  height: 80px;
+  padding: 0 50px;
+}
+.header .logo img {
+  height: 40px;
+  top: 20px;
   position: absolute;
-  height: 150px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.header .logo img.white {
+  opacity: 1;
+}
+.header.on {
+  color: #111;
+  background-color: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+.header.on .logo img.white {
+  opacity: 0;
+}
+.header.on .logo img.black {
+  opacity: 1;
+}
+
+.gnb .list {
+  display: flex;
+}
+.gnb .list li a {
   display: flex;
   align-items: center;
-  padding-left: 80px;
-}
-.header .logo a img {
-  width: 50%;
-}
-.header .list {
-  display: flex;
-  position: absolute;
-  right: 150px;
-  color: #fff;
-  padding: 30px;
-}
-.header .list .depth01 {
-  display: flex;
-  height: 100px;
-  align-items: center;
+  height: 80px;
+  padding: 0 40px;
   font-size: 20px;
-  font-weight: 600;
-  padding: 0 30px;
+  font-weight: 400;
 }

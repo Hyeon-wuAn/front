@@ -1,35 +1,62 @@
 @import "vars";
+
 .header {
-  display: flex;
-  justify-content: space-between;
   position: fixed;
+  display: flex;
+  //header에 있는 h1(logo)과 nav 두개의 정렬.
+  justify-content: space-between;
+  color: #fff;
   width: 100%;
   z-index: 99;
-  color: #fff;
-  .logo a {
-    position: absolute;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
+
+  transition: all 0.25s ease;
+  .logo {
+    height: 80px;
+    padding: 0 50px;
+    // padding-left: 50px;
+    // border: 1px solid #f00;
     img {
-      width: 50%;
+      height: 40px;
+      top: 20px;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.25s ease;
+      // border: 1px solid #f00;
+      &.white {
+        opacity: 1;
+      }
     }
   }
+  &.on {
+    color: #111;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    .logo {
+      img {
+        &.white {
+          opacity: 0;
+        }
+        &.black {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.gnb {
   .list {
     display: flex;
-    position: absolute;
-    right: 150px;
-    color: #fff;
-    padding: 30px;
-    .depth01 {
-      display: flex;
-      height: 100px;
-      align-items: center;
-      //   background-color: #111;
-      font-size: $h4;
-      font-weight: 600;
-      padding: 0 30px;
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        //border: 1px solid #fff;
+        height: 80px;
+        padding: 0 40px;
+        font-size: $h4;
+        font-weight: 400;
+        //box-sizing: border-box;
+      }
     }
   }
 }

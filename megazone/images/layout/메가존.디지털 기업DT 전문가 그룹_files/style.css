@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Color */
+  --bg-color: #f7f8f9;
+  --line-color: #e5e5e5;
+
+  --mzd-black-color: #141414;
+  --mzd-black-color-2: #333333;
+  --mzd-black-color-3: #666666;
+  --mzd-black-color-4: #999999;
+  --mzd-black-color-5: #cccccc;
+  --mzd-black-color-6: #ffffff;
+
+  --mzd-blue-color: #0b7bff;
+
+  /* Font */
+  --main-font-family: pretendard, sans-serif;
+  --sub-font-family: "Inter", sans-serif;
+  --font-weigth-regular: 400;
+  --font-weigth-semi-bold: 600;
+  --font-weigth-bold: 700;
+
+  /* Page Width */
+  --page-max-width: 1430px;
+
+  /* Header Height */
+  --header-height: 120px;
+  --header-height-fixed: 80px;
+  --header-height-big: 1080px;
+
+  --slider-image-width: 1160px;
+
+  --content-slide-width: 315px;
+
+  --news-single-news-height: 248px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: keep-all;
+  font-family: var(--main-font-family);
+}
+body,html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+}
+
+body {
+  background-color: var(--mzd-black-color-6);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--mzd-black-color);
+}
+
+h1 {
+  font-size: 68px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 46px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+h4 {
+  font-size: 36px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+h5 {
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+h6 {
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+}
+
+.btn-next {
+  position: relative;
+  text-transform: uppercase;
+  color: var(--mzd-black-color-5);
+  display: flex;
+  width: auto;
+  transition: 0.5s;
+}
+
+.btn-next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
+  width: 22px;
+  height: 22px;
+  background-image: url(../assets/arrows/foward-gray-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.5s;
+}
+
+.btn-next:hover::after {
+  background-image: url(../assets/arrows/foward-blue-arrow.png);
+  transform: translateX(5px) translateY(-50%);
+}
+
+.font-family-Pretendard {
+  font-family: var(--main-font-family);
+}
+
+.font-family-pretendard-regular {
+  font-family: var(--main-font-family);
+  font-weight: var(--font-weigth-regular);
+}
+
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-25%);
+    opacity: 0 ;
+  }
+  
+ 
+  50% {
+    /* transform: translateX(0); */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0 ;
+  }
+  
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes button-fade-in-left {
+  0% {
+    right: calc((100% - var(--slider-image-width)));
+    opacity: 1 ;
+  }
+ 
+  25% {
+    right: calc((100% - var(--slider-image-width)));
+   
+  }
+  100% {
+    right: calc((100% - var(--slider-image-width))/2);
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  0%{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-100%);  
+  }
+}
+@keyframes linearTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+.transitionSlideUp {
+  opacity: 1;
+  animation: fade-in-top 4s 1;
+}
+.transitionSlideIn {
+  opacity: 1;
+  animation: fade-in-left 2s 1;
+}
+.transitionButtonIn {
+  right: calc((100% - var(--slider-image-width))/2);
+  opacity: 1;
+  animation: button-fade-in-left 1s 1;
+}
+
+#scrollTop{
+  background-color: var(--bg-color);
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+@media (max-width: 991px) {
+  :root {
+    /* Header Height */
+    --header-height: 104px;
+    --header-height-fixed: 60px;
+    --header-height-big: auto;
+  }
+}

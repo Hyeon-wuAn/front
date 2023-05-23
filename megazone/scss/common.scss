@@ -7,3 +7,7 @@ body {
   min-height: 4000px;
   /* 한글폰트에는 영어가 포함되어있지만 영어폰트에는 한글이 포함되어있지 않아서 영어폰트를 먼저 써줘야 한다 */
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
