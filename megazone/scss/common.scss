@@ -1,4 +1,4 @@
-@import "vars";
+@charset "UTF-8";
 body {
   font-size: 16px;
   color: #111;
@@ -7,7 +7,37 @@ body {
   min-height: 4000px;
   /* 한글폰트에는 영어가 포함되어있지만 영어폰트에는 한글이 포함되어있지 않아서 영어폰트를 먼저 써줘야 한다 */
 }
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.container {
+  width: 1430px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+strong {
+  font-weight: 700;
+  /* 100/300/400/500/700/900 */
+}
+
+p {
+  line-height: 1.5;
+}
+
+.point-color {
+  color: #0b7bff;
+}
+
+.section {
+  padding: 100px 0;
 }
