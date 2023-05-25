@@ -8,6 +8,8 @@
   text-shadow: $shadow;
 }
 
+// text-shadow: offset-x offset-y blur-radius color | none | initial | inherit
+
 // @mixin longShadow($limit: 30, $color: rgba(0, 0, 0, 1)) {
 //   //1px 1px
 //   $shadow: "";

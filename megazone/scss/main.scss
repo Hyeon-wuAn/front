@@ -231,23 +231,23 @@
       }
     }
   }
-  .more {
-    margin-top: 40px;
-    font-size: $h4;
-    font-weight: 500;
-    width: 200px;
-    height: 54px;
-    display: flex;
-    background-color: $main-color;
-    justify-content: center;
-    align-items: center;
-    @include longShadow(8, darken($main-color, 20));
-    // main-color 보다 20% 어둡게
-    // darken 대신 lighten 도 가능.
-    overflow: hidden;
-  }
 }
-
+.more {
+  margin-top: 40px;
+  font-size: $h4;
+  font-weight: 500;
+  width: 200px;
+  height: 54px;
+  display: flex;
+  background-color: $main-color;
+  justify-content: center;
+  align-items: center;
+  // text-shadow: 10px 10px 0 #c4c4c4;
+  @include longShadow(50, darken($main-color, 20));
+  // main-color 보다 20% 어둡게
+  // darken 대신 lighten 도 가능.
+  overflow: hidden;
+}
 .title-box {
   h2 {
     font-size: $h1;

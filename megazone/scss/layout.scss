@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 .header {
   position: fixed;
@@ -57,6 +58,115 @@
         font-weight: 400;
         //box-sizing: border-box;
       }
+    }
+  }
+}
+
+.footer {
+  background-color: #111;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 150px 0;
+  .upper {
+    display: flex;
+    // align-items: stretch;
+
+    .menu-box {
+      width: 50%;
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        > li {
+          width: 50%;
+          margin-bottom: 50px;
+          &:nth-child(1) {
+            order: 1;
+          }
+          &:nth-child(2) {
+            order: 3;
+          }
+          &:nth-child(3) {
+            order: 2;
+          }
+          &:nth-child(4) {
+            order: 4;
+          }
+          &:nth-child(5) {
+            order: 5;
+          }
+        }
+        .depth01 {
+          font-size: $h3;
+          font-weight: 700;
+          margin-bottom: 30px;
+          &::after {
+            @include icon("\f1df");
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+        .depth02 {
+          margin-top: 20px;
+          li {
+            a {
+              color: rgba(255, 255, 255, 0.45);
+              font-weight: 200;
+              font-size: $h4;
+              padding: 10px 0;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .inquiry {
+      background-color: #222;
+      flex-grow: 1;
+      //남은 여백의 영역 가져옴. 뒤의 숫자는 1:1, 2:1 같은 뜻.
+      padding: 70px 80px;
+      font-size: $h4;
+      position: relative;
+      .main {
+        font-size: $h2;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .more {
+        position: absolute;
+        //상위포지션 기준으로 이동하지만 상위가 가진 padding에 영향받지는 않는다.
+        right: 80px;
+        bottom: 70px;
+      }
+    }
+  }
+  .lower {
+    .info {
+      margin-top: 10px;
+    }
+  }
+  .lower {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 100px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    address {
+      font-family: "Noto Sans KR";
+      .info-box {
+        display: flex;
+      }
+      dl {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+      a {
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+    .copyright {
+      font-size: 14px;
     }
   }
 }
