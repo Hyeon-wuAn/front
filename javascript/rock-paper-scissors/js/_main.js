@@ -1,12 +1,14 @@
 const computerList = document.querySelectorAll(".computer ul li");
 const humanList = document.querySelectorAll(".human ul li");
 const resultList = document.querySelector(".result ul");
+
 const appendItems = function (className) {
   const apppendItem = document.createElement("li");
   apppendItem.classList.add(className);
   apppendItem.textContent = className.substring(0, 1);
   resultList.appendChild(apppendItem);
 };
+
 let computerChoice = 0;
 //console.log("🚀 ~ file: main.js:2 ~ computerList:", computerList);
 const makeRandom = () => {
@@ -17,7 +19,6 @@ const makeRandom = () => {
   computerList[computerChoice].style.display = "block";
 };
 //console.log(10 === "10");
-//5번만 할 수 있게...
 
 let i = 0;
 let gameIdx = 0;

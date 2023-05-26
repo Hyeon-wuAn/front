@@ -1,0 +1,27 @@
+@import "vars";
+@import "mixins";
+
+.header {
+  font-size: $h3;
+  position: fixed;
+  width: 100%;
+  border: 1px solid #f00;
+  padding: 15px 15px;
+  box-sizing: border-box;
+  .gnb {
+    display: flex;
+    justify-content: space-between;
+    .list {
+      display: flex;
+      li {
+        a {
+          padding: 0 13px;
+        }
+      }
+    }
+  }
+  .logo {
+    border: 1px solid #111;
+    height: 100%;
+  }
+}

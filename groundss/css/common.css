@@ -1,0 +1,67 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+  color: #111;
+  font-family: "seesaw gothic", "Noto Sans KR", "Raleway", "MYYeongnamnu", "KCCChassam";
+  font-weight: 400;
+  min-height: 4000px;
+  /* 한글폰트에는 영어가 포함되어있지만 영어폰트에는 한글이 포함되어있지 않아서 영어폰트를 먼저 써줘야 한다 */
+}
+
+@font-face {
+  font-family: seesaw gothic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Regular.woff2) format("woff2"),
+    url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: seesaw gothic;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Medium.woff2) format("woff2"),
+    url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: seesaw gothic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Bold.woff2) format("woff2"),
+    url(https://groundseesaw.co.kr/wp-content/themes/kadence-child/fonts/Pretendard-Bold.woff) format("woff");
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1430px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+strong {
+  font-weight: 700;
+  /* 100/300/400/500/700/900 */
+}
+
+p {
+  line-height: 1.5;
+}
+
+.point-color {
+  color: #0b7bff;
+}
+
+.section {
+  padding: 100px 0;
+}

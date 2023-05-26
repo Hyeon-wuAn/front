@@ -1,13 +1,8 @@
-// 1. computer li 3개 중에 하나만 보이게 하기
-// 2. computer li 무작위로 나오게 setInterval 만들기
-// 3. 밑에 human li 에 이벤트 걸기
-// 4. human li 클릭했을때 멈추게 하기. clearInterval
-// 5. 승패 확인하기.
-computerList = document.querySelectorAll(".computer ul li");
-humanList = document.querySelectorAll(".human ul li");
-resultList = document.querySelector(".result ul");
+const computerList = document.querySelectorAll(".computer ul li");
+const humanList = document.querySelectorAll(".human ul li");
+const resultList = document.querySelector(".result ul");
 
-const appendItems = (className) => {
+const appendItems = function (className) {
   const apppendItem = document.createElement("li");
   apppendItem.classList.add(className);
   apppendItem.textContent = className.substring(0, 1);
@@ -15,28 +10,46 @@ const appendItems = (className) => {
 };
 
 let computerChoice = 0;
-const makeRandom = function () {
+//console.log("🚀 ~ file: main.js:2 ~ computerList:", computerList);
+const makeRandom = () => {
   computerList[0].style.display = "none";
   computerList[1].style.display = "none";
   computerList[2].style.display = "none";
   computerChoice = Math.floor(Math.random() * 3);
   computerList[computerChoice].style.display = "block";
 };
+//console.log(10 === "10");
 
-const computerIdx = setInterval(makeRandom, 100);
-makeRandom();
-
+let i = 0;
+let gameIdx = 0;
 humanList.forEach((item, idx) => {
-  //   console.log(item);
-  //   console.log(idx);
-  item.addEventListener("click", function () {
+  item.addEventListener("click", () => {
+    i++;
     clearInterval(computerIdx);
-    if (computerChoice === idx) {
-      appendItems("draw");
-    } else if ((computerChoice === 0 && idx === 1) || (computerChoice === 1 && idx === 2) || (computerChoice === 2 && idx === 0)) {
-      appendItems("win");
+    if (i >= 3) {
+      clearTimeout(gameIdx);
     } else {
+      gameIdx = setTimeout(() => {
+        computerIdx = setInterval(makeRandom, 50);
+      }, 1000);
+    }
+
+    if (idx === computerChoice) {
+      //console.log("draw");
+      appendItems("draw");
+    } else if (idx === 0 && computerChoice === 1) {
       appendItems("lose");
+    } else if (idx === 1 && computerChoice === 2) {
+      appendItems("lose");
+    } else if (idx === 2 && computerChoice === 0) {
+      appendItems("lose");
+    } else {
+      appendItems("win");
     }
   });
 });
+
+clearTimeout(setTimeout);
+
+let computerIdx = setInterval(makeRandom, 50); // clearInterval
+makeRandom();
