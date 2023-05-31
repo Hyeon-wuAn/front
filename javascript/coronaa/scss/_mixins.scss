@@ -1,0 +1,54 @@
+@mixin longShadow($limit: 30, $shadowColor: rgba(0, 0, 0, 0.1)) {
+  $shadow: "";
+  @for $i from 1 to $limit {
+    $shadow: $shadow + $i + "px " + $i + "px 0px " + $shadowColor + ",";
+  }
+  $shadow: $shadow + $limit + "px " + $limit + "px 0px " + $shadowColor;
+  $shadow: unquote($shadow);
+  text-shadow: $shadow;
+}
+
+// text-shadow: offset-x offset-y blur-radius color | none | initial | inherit
+
+// @mixin longShadow($limit: 30, $color: rgba(0, 0, 0, 1)) {
+//   //1px 1px
+//   $shadow: "";
+//   @for $i from 1 to $limit {
+//     $shadow: $shadow + $i + "px " + $i + "px 0px " + $color + ",";
+//   }
+//   $shadow: $shadow + $limit + "px " + $limit + "px 0px " + $color;
+//   $shadow: unquote($shadow);
+//   text-shadow: $shadow;
+// }
+
+@mixin icon($code) {
+  font-family: "Material Icons";
+  content: $code;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin multiEllipsis($line: 3, $lineHeight: 1.5) {
+  line-height: $lineHeight;
+  height: $line * $lineHeight * 1em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
